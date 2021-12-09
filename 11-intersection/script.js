@@ -4,11 +4,14 @@
  * Напишите функцию intersection(arr1, arr2). Она должна принимать
  * на вход два массива целых чисел. Функция должна вернуть новый
  * массив чисел, содержащихся в обоих исходных массивах.
- * 
+ *
 */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+  return arr1.reduce((result, item) => {
+    if (arr2.includes(item) && !result.includes(item)) result.push(item);
+    return result;
+  }, []);
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

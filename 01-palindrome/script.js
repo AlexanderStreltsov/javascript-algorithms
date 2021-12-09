@@ -7,14 +7,21 @@
  *
  * Напишите функцию palindrome(str), принимающую как аргумент строку.
  * Функция должна вернуть true, если строка — палиндром, и false, если нет.
- * 
+ *
  * Считайте, что на вход всегда передаётся слово: то есть знаков препинания
  * и пробелов в аргументе быть не может.
- * 
+ *
+ * Бонус. Задача для любознательных. Пусть функция принимает на вход любую строку,
+ * но пробелы и знаки препинания не учитывает. Например:
+ *
+ * palindrome('О, лета тело!'); // true
+ *
 */
 
 function palindrome(str) {
-    // Напишите код здесь
+  const formatStr = str.replace(/[,;:\-.!\?()'"\s]/g, '').toUpperCase();
+  const reverseFormatStr = [...formatStr].reverse().join('');
+  return formatStr === reverseFormatStr;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
@@ -22,11 +29,5 @@ function palindrome(str) {
 console.log(palindrome('топот')); // должно быть true
 console.log(palindrome('Saippuakivikauppias')); // true
 console.log(palindrome('привет')); // false
-
-/*
- * Бонус. Задача для любознательных. Пусть функция принимает на вход любую строку,
- * но пробелы и знаки препинания не учитывает. Например:
- * 
- * palindrome('О, лета тело!'); // true
- * 
-*/
+console.log(palindrome('О, лета тело!')); // true
+console.log(palindrome('тоПот(тот):-Топот?!')) // true
