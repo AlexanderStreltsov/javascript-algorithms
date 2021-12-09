@@ -7,17 +7,24 @@
  *
 */
 
+// function factorial(n) {
+//   if (n === 0) return 1;
+
+//   const num = [];
+//   for (let i = 1; i <= n; i++) {
+//     num.push(i);
+//   }
+
+//   return num.reduce((result, item) => {
+//     return result * item;
+//   }, 1);
+// }
+
 function factorial(n) {
-  if (n === 0) return 1;
-
-  const num = [];
-  for (let i = 1; i <= n; i++) {
-    num.push(i);
+  if (n < 1) {
+      return 1;
   }
-
-  return num.reduce((result, item) => {
-    return result * item;
-  }, 1);
+  return n * factorial(n - 1);
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

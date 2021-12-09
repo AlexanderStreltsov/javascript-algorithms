@@ -7,13 +7,17 @@
  *
 */
 
+// function uniq(arr) {
+//   return arr.reduce((newArr, item) => {
+//     if (Number.isInteger(item) && !newArr.includes(item)) {
+//       newArr.push(item);
+//     }
+//     return newArr;
+//   }, []);
+// }
+
 function uniq(arr) {
-  return arr.reduce((newArr, item) => {
-    if (Number.isInteger(item) && !newArr.includes(item)) {
-      newArr.push(item);
-    }
-    return newArr;
-  }, []);
+  return Array.from(new Set(arr));
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
